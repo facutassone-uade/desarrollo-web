@@ -1,0 +1,31 @@
+/* class */
+.imperio {
+    background-color: red;
+}
+
+.rebeldes {
+    background-color: blue;
+}
+
+
+.soldado {
+    border: 2px dashed black;
+    letter-spacing: 2px;
+}
+
+.apoyo {
+    text-align: center;
+}
+
+.nave {
+    text-transform: uppercase;
+}
+
+/* IDs */
+#darthvader {
+    font-size: 20px;
+}
+
+#luke {
+    font-style: italic;
+}
