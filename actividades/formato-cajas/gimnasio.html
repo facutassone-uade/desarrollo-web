@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gimnasio  - Registro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Gimnasio</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Planes</a></li>
+                <li><a href="#">Horarios</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="bienvenida">
+            <p>Registrate y empezá a entrenar con nosotros.</p>
+            <img src="gimnasio-imagen.jpeg" alt="Gimnasio" width="400">
+        </section>
+
+        <section class="registro">
+            <h2>Formulario de Registro</h2>
+            <form action="#" method="post">
+                <label for="nombre">Nombre completo:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+
+                <label for="email">Correo electrónico:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="plan">Seleccioná tu plan:</label><br>
+                <select id="plan" name="plan">
+                    <option value="basico">Básico</option>
+                    <option value="intermedio">Intermedio</option>
+                    <option value="premium">Premium</option>
+                </select><br><br>
+
+                <label>Horarios disponibles:</label><br><br>
+                <label><input type="checkbox" name="horario" value="mañana"> Mañana (8 a 12hs)</label><br>
+                <label><input type="checkbox" name="horario" value="tarde"> Tarde (14 a 18hs)</label><br>
+                <label><input type="checkbox" name="horario" value="noche"> Noche (19 a 22hs)</label><br><br>
+
+                <label for="mensaje">Contanos tu objetivo:</label><br>
+                <textarea id="mensaje" name="mensaje" rows="4" cols="40"></textarea><br><br>
+
+                <input type="submit" value="Registrarme">
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Gimnasio - Todos los derechos reservados</p>
+    </footer>
+
+</body>
+
+</html>
