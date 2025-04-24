@@ -2,7 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diseño y Desarrollo Web</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
@@ -11,98 +13,61 @@
     <p>Carrera: Licenciatura en Gestión de Tecnología de la Información</p>
     <nav>
       <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="avisos.html">Avisos</a></li>
-          <li><a href="sobre-mi.html">Sobre mí</a></li>
-          <li><a href="materias-2025.html">Materias 2025</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="avisos.html">Avisos</a></li>
+        <li><a href="sobre-mi.html">Sobre mí</a></li>
+        <li><a href="materias-2025.html">Materias 2025</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
       </ul>
-  </nav>
+    </nav>
   </header>
 
-  <main>
+  <main class="materia-grid">
 
-    <section>
-      <h2>Contenidos</h2>
+    <div class="columna-izquierda">
+      <section class="fechas">
+        <h2>Fechas de exámenes</h2>
+        <ul>
+          <li>Primer Examen Parcial – 25/04/2025</li>
+          <li>Segundo Examen Parcial – 13/06/2025</li>
+        </ul>
+      </section>
 
-      <h3>Unidad 1: Introducción al desarrollo web</h3>
-      <ul>
-        <li>Protocolo HTTP</li>
-        <li>Arquitectura cliente-servidor</li>
-        <li>Introducción al HTML y HTML5</li>
-        <li>Estructuras básicas</li>
-        <li>Elementos en línea y de bloque</li>
-      </ul>
+      <section class="bibliografia">
+        <h2>Bibliografía</h2>
 
-      <h3>Unidad 2: Diseño de interfaz y experiencia de usuario</h3>
-      <ul>
-        <li>CSS3 - Hojas de estilo en cascada</li>
-        <li>Responsive Design</li>
-        <li>Bootstrap</li>
-        <li>Proceso de diseño y prototipado</li>
-        <li>Maquetado y validación de diseño</li>
-        <li>Conceptos de usabilidad y experiencia de usuario</li>
-      </ul>
+        <h3>Obligatoria</h3>
+        <ul>
+          <li>Niederst Robbins, J. (2013). <em>HTML5 pocket reference</em>. O’Reilly.</li>
+          <li>Meyer, E. A. (2018). <em>CSS pocket reference</em>. O’Reilly.</li>
+          <li>Brown, E. (2016). <em>Learning JavaScript</em>. O’Reilly.</li>
+        </ul>
 
-      <h3>Unidad 3: Introducción a JavaScript</h3>
-      <ul>
-        <li>Conceptos básicos de JavaScript</li>
-        <li>Integración con HTML y CSS</li>
-        <li>Uso de Plugins</li>
-        <li>jQuery</li>
-      </ul>
+        <h3>Complementaria</h3>
+        <ul>
+          <li>Schulz, R. G. (2009). <em>Diseño web con CSS</em>. Alfaomega.</li>
+          <li>Firtman, M. (2012). <em>jQuery mobile</em>. Anaya Multimedia.</li>
+          <li>Muñoz Carmona, J. (2021). <em>Despliegue de aplicaciones web</em>. Síntesis.</li>
+          <li>Freeman, E., et al. (2004). <em>Head First Design Patterns</em>. O’Reilly.</li>
+        </ul>
+      </section>
+    </div>
 
-      <h3>Unidad 4: Despliegue</h3>
-      <ul>
-        <li>Dominios y hosting</li>
-        <li>Gestión y mantenimiento</li>
-        <li>Publicación de un sitio web</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Bibliografía</h2>
-
-      <h3>Obligatoria</h3>
-      <ul>
-        <li>Niederst Robbins, J. (2013). <em>HTML5 pocket reference</em>. O’Reilly.</li>
-        <li>Meyer, E. A. (2018). <em>CSS pocket reference</em>. O’Reilly.</li>
-        <li>Brown, E. (2016). <em>Learning JavaScript</em>. O’Reilly.</li>
-      </ul>
-
-      <h3>Complementaria</h3>
-      <ul>
-        <li>Schulz, R. G. (2009). <em>Diseño web con CSS</em>. Alfaomega.</li>
-        <li>Firtman, M. (2012). <em>jQuery mobile: Aplicaciones HTML5 para móviles</em>. Anaya Multimedia.</li>
-        <li>Muñoz Carmona, J. (2021). <em>Despliegue de aplicaciones web</em>. Síntesis.</li>
-        <li>Freeman, E., Robson, E., Sierra, K., & Bates, B. (2004). <em>Head First Design Patterns</em>. O’Reilly.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Fechas de exámenes</h2>
-      <ul>
-        <li>Primer Examen Parcial – 25/04/2025</li>
-        <li>Segundo Examen Parcial – 13/06/2025</li>
-      </ul>
-    </section>
-
-    <section>
+    <section class="uvas">
       <h2>Actividades UVAs</h2>
-      <h3>UVA1</h3>
       <ul>
-        <li><a href="index.html">Actividad 1: HTML - Introducción</a></li>
-        <li><a href="diseno-desarrollo-web.html">Actividad 2: HTML - Etiquetas</a></li>
-        <li><a href="index.html">Actividad 3: Ejercicio Integrador</a></li>
-        <li><a href="../desarrollo-web/actividades/formato-texto/star-wars.html">Actividad 4: Formato de texto (Star Wars)</a></li>
-        <li><a href="../desarrollo-web/actividades/formato-cajas/gimnasio.html">Actividad 5: Formato de cajas (Gimnasio)</a></li>
+        <li><a href="https://github.com/tuusuario/proyecto-uva1" target="_blank">Actividad 1: HTML - Introducción</a></li>
+        <li><a href="https://github.com/tuusuario/proyecto-uva2" target="_blank">Actividad 2: HTML - Etiquetas</a></li>
+        <li><a href="https://github.com/tuusuario/proyecto-integrador" target="_blank">Actividad 3: Ejercicio Integrador</a></li>
+        <li><a href="https://github.com/tuusuario/star-wars" target="_blank">Actividad 4: Formato de texto (Star Wars)</a></li>
+        <li><a href="https://github.com/tuusuario/gimnasio" target="_blank">Actividad 5: Formato de cajas (Gimnasio)</a></li>
       </ul>
     </section>
 
   </main>
 
   <footer>
-    <p>Materia correspondiente al Departamento Ingeniería y Ciencias Exactas</p>
+    <p>Curso: Nro curso / Profesora: Patricia Litovicius</p>
   </footer>
 
 </body>
