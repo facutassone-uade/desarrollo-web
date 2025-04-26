@@ -384,7 +384,7 @@ form input[type="submit"]:hover {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .materia-grid {
         grid-template-columns: 1fr;
     }
