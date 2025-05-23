@@ -318,6 +318,26 @@ form input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
+/* ---------------------------------
+   Estilos adicionales para validación JS - contacto.html
+---------------------------------- */
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    border-color: #2563eb;
+    outline: none;
+    background-color: #eef6ff;
+}
+
+#respuesta {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+}
+
+
 /* Responsive */
 @media (max-width: 600px) {
     main {

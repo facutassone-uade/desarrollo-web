@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="assets/img/uade-favicon.png"/>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <title>Contacto</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-  </head>
-  
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/img/uade-favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
 <body>
 
   <header>
@@ -25,23 +26,59 @@
   </header>
 
   <main>
-    <form action="#" method="post">
-      <label for="nombre">Nombre:</label><br>
-      <input type="text" id="nombre" name="nombre"><br><br>
+    <form id="form-contacto">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label><br />
+        <input type="text" id="nombre" name="nombre" class="input-campo" />
+      </div>
 
-      <label for="email">Correo electrónico:</label><br>
-      <input type="email" id="email" name="email"><br><br>
+      <div class="form-group">
+        <label for="email">Correo electrónico:</label><br />
+        <input type="email" id="email" name="email" class="input-campo" />
+      </div>
 
-      <label for="mensaje">Mensaje:</label><br>
-      <textarea id="mensaje" name="mensaje" rows="5" cols="40"></textarea><br><br>
+      <div class="form-group">
+        <label for="mensaje">Mensaje:</label><br />
+        <textarea id="mensaje" name="mensaje" rows="5" cols="40" class="input-campo"></textarea>
+      </div>
 
-      <input type="submit" value="Enviar">
+      <input type="submit" value="Enviar" class="boton-enviar" />
     </form>
+
+    <div id="respuesta" style="margin-top: 20px; font-weight: bold;"></div>
   </main>
+
 
   <footer>
     <p>&copy; 2025 Facundo Tassone</p>
   </footer>
 
+  <script>
+    document.getElementById("form-contacto").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const mensaje = document.getElementById("mensaje").value.trim();
+      const salida = document.getElementById("respuesta");
+
+      const emailValido = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+
+      if (!nombre || !email || !mensaje) {
+        salida.style.color = "red";
+        salida.textContent = "Por favor completá todos los campos.";
+      } else if (!emailValido.test(email)) {
+        salida.style.color = "red";
+        salida.textContent = "Ingresá un correo electrónico válido.";
+      } else {
+        salida.style.color = "green";
+        salida.innerHTML = `¡Gracias por tu contacto, <strong>${nombre}</strong>!<br>En breve te estaré respondiendo.`;
+        document.getElementById("form-contacto").reset();
+      }
+    });
+  </script>
+
+
 </body>
+
 </html>
