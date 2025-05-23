@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bienvenida interactiva</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      text-align: center;
+      background-color: #f0f4f8;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 8px;
+      margin: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1e40af;
+    }
+
+    #mensaje {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #1f2937;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Ingresá tus datos</h1>
+
+  <form id="formulario">
+    <input type="text" id="nombre" placeholder="Nombre" required />
+    <input type="text" id="apellido" placeholder="Apellido" required />
+    <input type="text" id="ciudad" placeholder="Ciudad" required />
+    <input type="date" id="fechaNacimiento" required />
+    <br />
+    <button type="submit">Mostrar bienvenida</button>
+  </form>
+
+  <div id="mensaje"></div>
+
+  <script>
+    const formulario = document.getElementById("formulario");
+    const mensaje = document.getElementById("mensaje");
+
+    formulario.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const apellido = document.getElementById("apellido").value;
+      const ciudad = document.getElementById("ciudad").value;
+      const fechaNacimiento = new Date(document.getElementById("fechaNacimiento").value);
+      const hoy = new Date();
+
+      const diferenciaTiempo = hoy - fechaNacimiento;
+      const diasVividos = Math.floor(diferenciaTiempo / (1000 * 60 * 60 * 24));
+
+      mensaje.innerHTML = `
+        ¡Hola ${nombre} ${apellido}! Bienvenido/a a nuestra web. Vemos que estás en ${ciudad}.<br>
+        Desde que naciste viviste aproximadamente <strong>${diasVividos}</strong> días.`;
+    });
+  </script>
+
+</body>
+</html>
