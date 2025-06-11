@@ -1,4 +1,43 @@
 /* ---------------------------------
+   Variables CSS para temas
+---------------------------------- */
+:root {
+    /* Tema claro */
+    --bg-primary: #f3f4f6;
+    --bg-secondary: #ffffff;
+    --bg-header: #1f2937;
+    --text-primary: #1f2937;
+    --text-secondary: #2c3e50;
+    --text-light: #ffffff;
+    --border-color: #ccc;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-hover: rgba(0, 0, 0, 0.15);
+    --accent-blue: #2563eb;
+    --accent-blue-hover: #007bff;
+    --accent-blue-dark: #0056b3;
+    --nav-hover: #93c5fd;
+    --form-focus: #eef6ff;
+}
+
+html[data-theme="dark"] {
+    /* Tema oscuro */
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --bg-header: #0f172a;
+    --text-primary: #e5e7eb;
+    --text-secondary: #f3f4f6;
+    --text-light: #ffffff;
+    --border-color: #404040;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --shadow-hover: rgba(0, 0, 0, 0.4);
+    --accent-blue: #3b82f6;
+    --accent-blue-hover: #1d4ed8;
+    --accent-blue-dark: #1e40af;
+    --nav-hover: #60a5fa;
+    --form-focus: #1e293b;
+}
+
+/* ---------------------------------
    Estilos globales (para todo el sitio)
 ---------------------------------- */
 * {
@@ -10,6 +49,7 @@
 html,
 body {
     height: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
@@ -17,8 +57,8 @@ body {
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
-    background-color: #f3f4f6;
-    color: #1f2937;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     line-height: 1.6;
 }
 
@@ -28,10 +68,31 @@ main {
 
 /* Header y navegación */
 header {
-    background-color: #1f2937;
-    color: white;
+    background-color: var(--bg-header);
+    color: var(--text-light);
     padding: 20px;
     text-align: center;
+    position: relative;
+}
+
+/* Botón de toggle para modo oscuro */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: 2px solid var(--text-light);
+    color: var(--text-light);
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--text-light);
+    color: var(--bg-header);
 }
 
 nav ul {
@@ -45,20 +106,20 @@ nav ul {
 }
 
 nav li a {
-    color: white;
+    color: var(--text-light);
     text-decoration: none;
     font-weight: bold;
 }
 
 nav li a:hover {
     text-decoration: underline;
-    color: #93c5fd;
+    color: var(--nav-hover);
 }
 
 /* Footer */
 footer {
-    background-color: #1f2937;
-    color: white;
+    background-color: var(--bg-header);
+    color: var(--text-light);
     text-align: center;
     padding: 15px 0;
 }
@@ -77,6 +138,7 @@ main {
 main h2 {
     margin-bottom: 20px;
     text-align: center;
+    color: var(--text-secondary);
 }
 
 .home {
@@ -89,23 +151,32 @@ main h2 {
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: white;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-secondary);
+    box-shadow: 0 0 8px var(--shadow);
+    transition: background-color 0.3s ease;
 }
 
 th,
 td {
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     text-align: center;
 }
 
 th {
-    background-color: #2563eb;
-    color: white;
+    background-color: var(--accent-blue);
+    color: var(--text-light);
 }
 
 @media (max-width: 600px) {
+
+    .theme-toggle {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 10px auto 0;
+        display: block;
+    }
 
     table,
     thead,
@@ -146,16 +217,17 @@ th {
 
 main h2 {
     margin-top: 30px;
-    color: #2c3e50;
+    color: var(--text-secondary);
 }
 
 main ul {
-    background-color: #ffffff;
+    background-color: var(--bg-secondary);
     padding: 15px 20px;
     margin-bottom: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px var(--shadow);
     list-style-type: disc;
+    transition: background-color 0.3s ease;
 }
 
 main ul li {
@@ -188,7 +260,7 @@ main section {
 }
 
 main h2 {
-    color: #2c3e50;
+    color: var(--text-secondary);
     margin-bottom: 10px;
 }
 
@@ -204,7 +276,7 @@ main img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 8px var(--shadow-hover);
 }
 
 /* Responsive */
@@ -230,11 +302,12 @@ main img {
 
 .materias ul {
     padding: 25px 30px;
-    background-color: #ffffff;
+    background-color: var(--bg-secondary);
     border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 8px var(--shadow);
     list-style-type: disc;
     list-style-position: inside;
+    transition: background-color 0.3s ease;
 }
 
 .materias li {
@@ -245,7 +318,7 @@ main img {
 
 .materias li a {
     text-decoration: none;
-    color: #2c3e50;
+    color: var(--text-secondary);
     font-weight: bold;
 }
 
@@ -280,16 +353,18 @@ main {
 }
 
 form {
-    background-color: #ffffff;
+    background-color: var(--bg-secondary);
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px var(--shadow);
+    transition: background-color 0.3s ease;
 }
 
 form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: var(--text-primary);
 }
 
 form input[type="text"],
@@ -298,14 +373,17 @@ form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     font-size: 1rem;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
 }
 
 form input[type="submit"] {
-    background-color: #007bff;
-    color: white;
+    background-color: var(--accent-blue-hover);
+    color: var(--text-light);
     padding: 10px 20px;
     border: none;
     font-size: 1rem;
@@ -315,7 +393,7 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: var(--accent-blue-dark);
 }
 
 /* ---------------------------------
@@ -325,9 +403,9 @@ form input[type="submit"]:hover {
 form input[type="text"]:focus,
 form input[type="email"]:focus,
 form textarea:focus {
-    border-color: #2563eb;
+    border-color: var(--accent-blue);
     outline: none;
-    background-color: #eef6ff;
+    background-color: var(--form-focus);
 }
 
 #respuesta {
@@ -370,22 +448,23 @@ form textarea:focus {
 }
 
 .materia-grid section {
-    background-color: #fff;
+    background-color: var(--bg-secondary);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 8px var(--shadow);
+    transition: background-color 0.3s ease;
 }
 
 .materia-grid h2 {
     margin-bottom: 15px;
-    color: #2c3e50;
+    color: var(--text-secondary);
 }
 
 .materia-grid h3 {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 1rem;
-    color: #333;
+    color: var(--text-primary);
 }
 
 .materia-grid ul {
@@ -425,17 +504,18 @@ form textarea:focus {
 }
 
 .materia-detalle section {
-    background-color: #fff;
+    background-color: var(--bg-secondary);
     padding: 25px;
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 8px var(--shadow);
+    transition: background-color 0.3s ease;
 }
 
 .materia-detalle h2 {
     font-size: 1.4rem;
     margin-bottom: 10px;
-    color: #2c3e50;
+    color: var(--text-secondary);
 }
 
 .materia-detalle ul {

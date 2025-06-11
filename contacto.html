@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="assets/img/uade-favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/img/uade-favicon.png" />  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <title>Contacto</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/theme-init.js"></script>
 </head>
 
 <body>
-
   <header>
+    <button id="theme-toggle" class="theme-toggle">🌙 Oscuro</button>
     <h1>Contacto</h1>
     <nav>
       <ul>
@@ -74,11 +74,10 @@
         salida.style.color = "green";
         salida.innerHTML = `¡Gracias por tu contacto, <strong>${nombre}</strong>!<br>En breve te estaré respondiendo.`;
         document.getElementById("form-contacto").reset();
-      }
-    });
+      }    });
   </script>
 
-
+  <script src="assets/js/theme-toggle.js"></script>
 </body>
 
 </html>
