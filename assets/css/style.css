@@ -482,6 +482,35 @@ form textarea:focus {
     text-decoration: underline;
 }
 
+/* Estilos para los links de commits de GitHub */
+.uvas li {
+    margin-bottom: 15px;
+}
+
+.uvas li small {
+    display: block;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 0.85em;
+    opacity: 0.8;
+}
+
+.uvas li small a {
+    color: var(--accent-blue);
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.uvas li small a:hover {
+    text-decoration: underline;
+    color: var(--accent-blue-hover);
+}
+
+.uvas li small em {
+    color: var(--text-primary);
+    opacity: 0.6;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
     .materia-grid {
