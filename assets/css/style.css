@@ -277,6 +277,13 @@ main img {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 0 8px var(--shadow-hover);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+main img:hover {
+    transform: scale(1.02);
 }
 
 /* Responsive */
